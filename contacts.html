@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <title>Заказ — AUREL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+  <a class="logo" href="index.html">
+    AUREL<span>.</span>
+  </a>
+
+  <nav>
+    <a href="catalog.html">Модели</a>
+    <a href="product.html">AUREL X</a>
+    <a class="active" href="contacts.html">Контакты</a>
+  </nav>
+
+  <button class="menu">☰</button>
+
+</header>
+
+
+<main class="page">
+
+<section class="contact-head">
+
+  <span class="eyebrow">
+    Связь с AUREL
+  </span>
+
+  <h1>
+    Готов к своему<br>
+    <em>звуку?</em>
+  </h1>
+
+  <p>
+    Оставь контакты — мы свяжемся
+    с тобой и поможем выбрать модель.
+  </p>
+
+</section>
+
+
+<form class="contact-form"
+      onsubmit="return submitOrder(event)">
+
+  <label>
+    Имя
+
+    <input
+      type="text"
+      name="name"
+      placeholder="Как к тебе обращаться?"
+      required
+    >
+
+  </label>
+
+
+  <label>
+    Телефон или Telegram
+
+    <input
+      type="text"
+      name="contact"
+      placeholder="@username или +7..."
+      required
+    >
+
+  </label>
+
+
+  <label>
+    Модель
+
+    <select name="model">
+
+      <option>AUREL X</option>
+      <option>AUREL Air</option>
+      <option>AUREL Studio</option>
+
+    </select>
+
+  </label>
+
+
+  <button class="btn wide" type="submit">
+    Отправить заявку
+  </button>
+
+  <p class="form-note" id="formMessage"></p>
+
+</form>
+
+</main>
+
+
+<footer>
+  <span>© 2026 AUREL</span>
+  <a href="index.html">На главную</a>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
