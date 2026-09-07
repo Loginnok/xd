@@ -1,944 +1,136 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FitnessPro — твой лучший старт</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #F8F6F1;
-            color: #2D2D2D;
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        .btn-primary {
-            display: inline-block;
-            background: linear-gradient(135deg, #FF6B6B, #EE5A24);
-            color: #FFFFFF;
-            font-weight: 700;
-            font-size: 16px;
-            padding: 16px 44px;
-            border-radius: 50px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            box-shadow: 0 8px 30px rgba(255, 107, 107, 0.3);
-            border: none;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 40px rgba(255, 107, 107, 0.5);
-        }
-
-        .btn-secondary {
-            display: inline-block;
-            background: #FFFFFF;
-            color: #2D2D2D;
-            font-weight: 600;
-            font-size: 16px;
-            padding: 16px 44px;
-            border-radius: 50px;
-            border: 2px solid #E5E5E5;
-            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .btn-secondary:hover {
-            border-color: #FF6B6B;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-            transform: translateY(-3px);
-        }
-
-        .header {
-            padding: 20px 0;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 900;
-            color: #2D2D2D;
-        }
-
-        .logo span {
-            background: linear-gradient(135deg, #FF6B6B, #EE5A24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav {
-            display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-
-        .nav a {
-            font-weight: 500;
-            color: #6C6C6C;
-            transition: color 0.3s;
-        }
-
-        .nav a:hover {
-            color: #FF6B6B;
-        }
-
-        .nav .btn-primary {
-            padding: 10px 28px;
-            font-size: 14px;
-        }
-
-        .hero {
-            padding: 80px 0 100px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 107, 107, 0.06), transparent 70%);
-            top: -200px;
-            right: -100px;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(254, 202, 87, 0.05), transparent 70%);
-            bottom: -100px;
-            left: -100px;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero .container {
-            display: flex;
-            align-items: center;
-            gap: 60px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-content {
-            flex: 1;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: rgba(255, 107, 107, 0.1);
-            color: #FF6B6B;
-            font-weight: 600;
-            font-size: 13px;
-            padding: 4px 16px;
-            border-radius: 50px;
-            margin-bottom: 20px;
-        }
-
-        .hero h1 {
-            font-size: 56px;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            color: #2D2D2D;
-        }
-
-        .hero h1 span {
-            background: linear-gradient(135deg, #FF6B6B, #EE5A24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-desc {
-            font-size: 18px;
-            color: #6C6C6C;
-            max-width: 480px;
-            margin-bottom: 32px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 48px;
-            margin-top: 48px;
-        }
-
-        .hero-stats .stat h3 {
-            font-size: 36px;
-            font-weight: 800;
-            color: #FF6B6B;
-        }
-
-        .hero-stats .stat p {
-            color: #6C6C6C;
-            font-size: 14px;
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-image .card-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            max-width: 400px;
-        }
-
-        .hero-image .card-item {
-            background: #FFFFFF;
-            border-radius: 24px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .hero-image .card-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-        }
-
-        .hero-image .card-item .icon {
-            font-size: 44px;
-            display: block;
-            margin-bottom: 8px;
-        }
-
-        .hero-image .card-item .label {
-            font-size: 14px;
-            font-weight: 600;
-            color: #2D2D2D;
-        }
-
-        /* ===== TRUST (НОВЫЙ) ===== */
-        .trust {
-            padding: 50px 0 60px;
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-            background: #FFFFFF;
-        }
-
-        .trust p {
-            text-align: center;
-            color: #9CA3AF;
-            font-size: 13px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 30px;
-        }
-
-        .trust-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 30px;
-            text-align: center;
-        }
-
-        .trust-item .number {
-            display: block;
-            font-size: 32px;
-            font-weight: 800;
-            color: #FF6B6B;
-            margin-bottom: 4px;
-        }
-
-        .trust-item .label {
-            font-size: 14px;
-            color: #6C6C6C;
-        }
-
-        /* ===== PROGRAMS ===== */
-        .programs {
-            padding: 100px 0;
-        }
-
-        .section-tag {
-            text-align: center;
-            color: #FF6B6B;
-            font-weight: 600;
-            font-size: 14px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            color: #2D2D2D;
-        }
-
-        .section-title span {
-            background: linear-gradient(135deg, #FF6B6B, #EE5A24);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-sub {
-            text-align: center;
-            color: #6C6C6C;
-            font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 60px;
-        }
-
-        .programs-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .program-card {
-            background: #FFFFFF;
-            border-radius: 24px;
-            padding: 40px 30px;
-            text-align: center;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-        }
-
-        .program-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.06);
-            border-color: rgba(255, 107, 107, 0.2);
-        }
-
-        .program-card .icon {
-            font-size: 48px;
-            display: block;
-            margin-bottom: 16px;
-        }
-
-        .program-card h3 {
-            font-size: 22px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #2D2D2D;
-        }
-
-        .program-card .level {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 600;
-            color: #FF6B6B;
-            background: rgba(255, 107, 107, 0.08);
-            padding: 2px 16px;
-            border-radius: 50px;
-            margin-bottom: 12px;
-        }
-
-        .program-card p {
-            color: #6C6C6C;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .program-card .duration {
-            font-size: 14px;
-            color: #9CA3AF;
-        }
-
-        .program-card .duration strong {
-            color: #2D2D2D;
-        }
-
-        /* ===== PRICING ===== */
-        .pricing {
-            padding: 100px 0;
-            background: #FFFFFF;
-        }
-
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .pricing-card {
-            background: #F8F6F1;
-            border-radius: 24px;
-            padding: 40px 30px;
-            text-align: center;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.04);
-        }
-
-        .pricing-card.popular {
-            border-color: #FF6B6B;
-            background: #FFFFFF;
-            box-shadow: 0 8px 40px rgba(255, 107, 107, 0.08);
-            position: relative;
-        }
-
-        .pricing-card.popular::before {
-            content: '🔥 Самый популярный';
-            position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #FF6B6B, #EE5A24);
-            padding: 4px 20px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 700;
-            color: #fff;
-            white-space: nowrap;
-        }
-
-        .pricing-card .plan-name {
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: #2D2D2D;
-        }
-
-        .pricing-card .price {
-            font-size: 48px;
-            font-weight: 900;
-            margin: 8px 0;
-            color: #2D2D2D;
-        }
-
-        .pricing-card .price span {
-            font-size: 18px;
-            font-weight: 400;
-            color: #6C6C6C;
-        }
-
-        .pricing-card .price-sub {
-            color: #9CA3AF;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .pricing-card ul {
-            list-style: none;
-            margin: 20px 0 32px;
-        }
-
-        .pricing-card ul li {
-            padding: 8px 0;
-            color: #6C6C6C;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        .pricing-card ul li:last-child {
-            border-bottom: none;
-        }
-
-        .pricing-card .btn-primary {
-            font-size: 15px;
-            padding: 14px 40px;
-        }
-
-        .pricing-card .btn-secondary {
-            font-size: 15px;
-            padding: 14px 40px;
-        }
-
-        /* ===== TESTIMONIALS ===== */
-        .testimonials {
-            padding: 100px 0;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .testimonial-card {
-            background: #FFFFFF;
-            border-radius: 24px;
-            padding: 30px;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.04);
-        }
-
-        .testimonial-card .stars {
-            color: #FECA57;
-            font-size: 18px;
-            margin-bottom: 12px;
-        }
-
-        .testimonial-card blockquote {
-            font-size: 16px;
-            color: #6C6C6C;
-            margin-bottom: 16px;
-            font-style: italic;
-        }
-
-        .testimonial-card .author {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .testimonial-card .author .avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #FF6B6B, #EE5A24);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        .testimonial-card .author .name {
-            font-weight: 700;
-            font-size: 15px;
-            color: #2D2D2D;
-        }
-
-        .testimonial-card .author .role {
-            font-size: 13px;
-            color: #9CA3AF;
-        }
-
-        /* ===== CTA FINAL ===== */
-        .cta-final {
-            padding: 100px 0;
-            background: linear-gradient(135deg, #FF6B6B, #EE5A24);
-            text-align: center;
-            color: #FFFFFF;
-        }
-
-        .cta-final h2 {
-            font-size: 44px;
-            font-weight: 800;
-            margin-bottom: 16px;
-        }
-
-        .cta-final p {
-            opacity: 0.9;
-            font-size: 18px;
-            margin-bottom: 32px;
-        }
-
-        .cta-final .btn-primary {
-            background: #FFFFFF;
-            color: #FF6B6B;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-        }
-
-        .cta-final .btn-primary:hover {
-            background: #FFFFFF;
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
-        }
-
-        .footer {
-            padding: 32px 0;
-            background: #F8F6F1;
-            text-align: center;
-            color: #9CA3AF;
-            font-size: 14px;
-            border-top: 1px solid rgba(0, 0, 0, 0.04);
-        }
-
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 1024px) {
-            .hero h1 {
-                font-size: 42px;
-            }
-            .programs-grid,
-            .pricing-grid,
-            .testimonials-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .header .container {
-                flex-direction: column;
-                gap: 16px;
-            }
-            .nav {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 16px;
-            }
-            .hero .container {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero h1 {
-                font-size: 34px;
-            }
-            .hero-desc {
-                max-width: 100%;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .hero-stats {
-                justify-content: center;
-                gap: 30px;
-            }
-            .hero-stats .stat h3 {
-                font-size: 28px;
-            }
-            .trust-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-            }
-            .programs-grid,
-            .pricing-grid,
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-            }
-            .section-title {
-                font-size: 30px;
-            }
-            .cta-final h2 {
-                font-size: 30px;
-            }
-            .hero-image .card-grid {
-                max-width: 100%;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 28px;
-            }
-            .hero-stats {
-                flex-direction: column;
-                gap: 12px;
-            }
-            .btn-primary,
-            .btn-secondary {
-                padding: 12px 24px;
-                font-size: 14px;
-                width: 100%;
-                text-align: center;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            .hero-image .card-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .hero-image .card-item {
-                padding: 20px 16px;
-            }
-            .hero-image .card-item .icon {
-                font-size: 32px;
-            }
-            .trust-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-            .trust-item .number {
-                font-size: 26px;
-            }
-            .trust-item .label {
-                font-size: 12px;
-            }
-            .pricing-card.popular::before {
-                font-size: 10px;
-                padding: 3px 14px;
-                top: -10px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <title>AUREL — Премиальный звук</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- ===== HEADER ===== -->
-    <header class="header">
-        <div class="container">
-            <div class="logo">💪 <span>Fitness</span>Pro</div>
-            <nav class="nav">
-                <a href="#">Программы</a>
-                <a href="#">Тарифы</a>
-                <a href="#">Отзывы</a>
-                <a href="https://t.me/Jexonflier" target="_blank" class="btn-primary">Начать</a>
-            </nav>
-        </div>
-    </header>
+<header class="header">
+  <a class="logo" href="index.html">AUREL<span>.</span></a>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-badge">🔥 30 дней бесплатно</span>
-                <h1>
-                    Твоё тело — <br />
-                    <span>твоя сила</span>
-                </h1>
-                <p class="hero-desc">
-                    Тренируйся с лучшими тренерами онлайн. Похудение, сила, тонус — программа под любой уровень.
-                </p>
-                <div class="hero-buttons">
-                    <a href="https://t.me/Jexonflier" target="_blank" class="btn-primary">🚀 Начать тренировку</a>
-                    <a href="#" class="btn-secondary">Узнать больше</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat"><h3>10K+</h3><p>Активных участников</p></div>
-                    <div class="stat"><h3>92%</h3><p>Достигли цели</p></div>
-                    <div class="stat"><h3>4.8</h3><p>Средний рейтинг</p></div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="card-grid">
-                    <div class="card-item">
-                        <span class="icon">🏋️</span>
-                        <div class="label">Силовые</div>
-                    </div>
-                    <div class="card-item">
-                        <span class="icon">🧘</span>
-                        <div class="label">Йога</div>
-                    </div>
-                    <div class="card-item">
-                        <span class="icon">🏃</span>
-                        <div class="label">Кардио</div>
-                    </div>
-                    <div class="card-item">
-                        <span class="icon">🥊</span>
-                        <div class="label">Бокс</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+  <nav>
+    <a href="catalog.html">Модели</a>
+    <a href="product.html">AUREL X</a>
+    <a href="contacts.html">Контакты</a>
+  </nav>
 
-    <!-- ===== TRUST (НОВЫЙ, БЕЗ FAKE БРЕНДОВ) ===== -->
-    <section class="trust">
-        <div class="container">
-            <p>Нас выбирают</p>
-            <div class="trust-grid">
-                <div class="trust-item">
-                    <span class="number">10K+</span>
-                    <span class="label">активных участников</span>
-                </div>
-                <div class="trust-item">
-                    <span class="number">500+</span>
-                    <span class="label">сертифицированных тренеров</span>
-                </div>
-                <div class="trust-item">
-                    <span class="number">4.8</span>
-                    <span class="label">средний рейтинг</span>
-                </div>
-                <div class="trust-item">
-                    <span class="number">92%</span>
-                    <span class="label">достигли цели</span>
-                </div>
-            </div>
-        </div>
-    </section>
+  <button class="menu">☰</button>
+</header>
 
-    <!-- ===== PROGRAMS ===== -->
-    <section class="programs">
-        <div class="container">
-            <p class="section-tag">Программы</p>
-            <h2 class="section-title">Выбери свой <span>уровень</span></h2>
-            <p class="section-sub">Тренировки для любого уровня подготовки — от новичка до профи</p>
+<main>
 
-            <div class="programs-grid">
-                <div class="program-card">
-                    <span class="icon">🌱</span>
-                    <h3>Новичок</h3>
-                    <span class="level">Для начинающих</span>
-                    <p>Базовые упражнения, мягкое вхождение в ритм. Без перегрузок.</p>
-                    <div class="duration">⏱️ <strong>20 мин</strong> / день</div>
-                </div>
-                <div class="program-card">
-                    <span class="icon">💪</span>
-                    <h3>Средний</h3>
-                    <span class="level">Для уверенных</span>
-                    <p>Интенсивные тренировки, работа с весом, прогрессия нагрузок.</p>
-                    <div class="duration">⏱️ <strong>40 мин</strong> / день</div>
-                </div>
-                <div class="program-card">
-                    <span class="icon">🔥</span>
-                    <h3>Профи</h3>
-                    <span class="level">Для атлетов</span>
-                    <p>Экстремальные нагрузки, сплиты, функциональный тренинг.</p>
-                    <div class="duration">⏱️ <strong>60 мин</strong> / день</div>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero">
 
-    <!-- ===== PRICING ===== -->
-    <section class="pricing">
-        <div class="container">
-            <p class="section-tag">Тарифы</p>
-            <h2 class="section-title">Цены на <span>тренировки</span></h2>
-            <p class="section-sub">Гибкие тарифы на любой бюджет</p>
+  <div class="hero-copy">
+    <span class="eyebrow">AUREL X · 2026</span>
 
-            <div class="pricing-grid">
-                <div class="pricing-card">
-                    <p class="plan-name">Старт</p>
-                    <div class="price">0 <span>₽</span></div>
-                    <p class="price-sub">Пробный период</p>
-                    <ul>
-                        <li>7 дней бесплатно</li>
-                        <li>3 базовые программы</li>
-                        <li>Только в приложении</li>
-                    </ul>
-                    <a href="https://t.me/Jexonflier" target="_blank" class="btn-secondary">Попробовать</a>
-                </div>
+    <h1>
+      Звук, который<br>
+      <em>чувствуешь.</em>
+    </h1>
 
-                <div class="pricing-card popular">
-                    <p class="plan-name">Про</p>
-                    <div class="price">990 <span>₽</span></div>
-                    <p class="price-sub">/ месяц</p>
-                    <ul>
-                        <li>♾️ Все программы</li>
-                        <li>📹 Личные тренировки с тренером</li>
-                        <li>📊 Прогресс-трекинг</li>
-                        <li>🎯 Персональный план</li>
-                    </ul>
-                    <a href="https://t.me/Jexonflier" target="_blank" class="btn-primary">Начать</a>
-                </div>
+    <p>
+      Премиальные беспроводные наушники
+      с адаптивным шумоподавлением
+      и до 40 часов работы.
+    </p>
 
-                <div class="pricing-card">
-                    <p class="plan-name">Год</p>
-                    <div class="price">790 <span>₽</span></div>
-                    <p class="price-sub">/ месяц при оплате за год</p>
-                    <ul>
-                        <li>💸 Экономия 20%</li>
-                        <li>🏆 Доступ к эксклюзивам</li>
-                        <li>🎁 Бонусные программы</li>
-                    </ul>
-                    <a href="https://t.me/Jexonflier" target="_blank" class="btn-secondary">Выбрать</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="actions">
+      <a class="btn" href="product.html">Узнать больше</a>
+      <a class="text-link" href="catalog.html">
+        Смотреть модели →
+      </a>
+    </div>
+  </div>
 
-    <!-- ===== TESTIMONIALS ===== -->
-    <section class="testimonials">
-        <div class="container">
-            <p class="section-tag">Отзывы</p>
-            <h2 class="section-title">Что говорят <span>участники</span></h2>
-            <p class="section-sub">Реальные результаты реальных людей</p>
+  <div class="hero-art">
+    <div class="glow"></div>
 
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <blockquote>За 3 месяца сбросил 12 кг и чувствую себя невероятно! Лучшие тренеры.</blockquote>
-                    <div class="author">
-                        <div class="avatar">А</div>
-                        <div>
-                            <div class="name">Антон</div>
-                            <div class="role">Похудел на 12 кг</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <blockquote>Йога по утрам изменила мою жизнь. Стала гибче и спокойнее.</blockquote>
-                    <div class="author">
-                        <div class="avatar">Е</div>
-                        <div>
-                            <div class="name">Екатерина</div>
-                            <div class="role">Занимается 6 месяцев</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <blockquote>Тренировки подходят даже для занятых — 40 минут и ты в тонусе!</blockquote>
-                    <div class="author">
-                        <div class="avatar">М</div>
-                        <div>
-                            <div class="name">Максим</div>
-                            <div class="role">Топ-менеджер</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <img
+      src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=90"
+      alt="Премиальные наушники"
+    >
+  </div>
 
-    <!-- ===== FINAL CTA ===== -->
-    <section class="cta-final">
-        <div class="container">
-            <h2>Готов начать <span style="color:#2D2D2D;">менять себя</span>?</h2>
-            <p>Присоединяйся к 10 000+ участников и стань лучшей версией себя</p>
-            <a href="https://t.me/Jexonflier" target="_blank" class="btn-primary">💪 Начать сегодня</a>
-        </div>
-    </section>
+</section>
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="footer">
-        <div class="container">
-            <p>© 2026 FitnessPro. Сделано для портфолио.</p>
-        </div>
-    </footer>
 
-    <script>
-        let totalClicks = 0;
-        document.querySelectorAll('.btn-primary, .btn-secondary').forEach
+<section class="strip">
+
+  <div>
+    <b>40 ч</b>
+    <span>автономности</span>
+  </div>
+
+  <div>
+    <b>−42 dB</b>
+    <span>шумоподавление</span>
+  </div>
+
+  <div>
+    <b>24-bit</b>
+    <span>Hi-Res Audio</span>
+  </div>
+
+  <div>
+    <b>2 года</b>
+    <span>гарантии</span>
+  </div>
+
+</section>
+
+
+<section class="intro">
+
+  <div>
+    <span class="eyebrow">Новая коллекция</span>
+
+    <h2>
+      Минимализм снаружи.<br>
+      Технологии внутри.
+    </h2>
+  </div>
+
+  <p>
+    Мы создали AUREL для тех,
+    кто не готов выбирать между
+    дизайном, комфортом
+    и настоящим звуком.
+  </p>
+
+</section>
+
+
+<section class="feature-card">
+
+  <div>
+    <span class="eyebrow">AUREL X</span>
+
+    <h2>
+      Тишина.<br>
+      Включи свой мир.
+    </h2>
+
+    <a class="btn" href="product.html">
+      Подробнее
+    </a>
+  </div>
+
+</section>
+
+</main>
+
+<footer>
+  <span>© 2026 AUREL</span>
+  <a href="contacts.html">Связаться</a>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
