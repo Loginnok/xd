@@ -1,149 +1,297 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <title>Модели — AUREL</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+
+    <title>AUREL — Коллекция</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="header">
 
-  <a class="logo" href="index.html">
-    AUREL<span>.</span>
-  </a>
+    <a href="index.html" class="logo">AUREL</a>
 
-  <nav>
-    <a class="active" href="catalog.html">Модели</a>
-    <a href="product.html">AUREL X</a>
-    <a href="contacts.html">Контакты</a>
-  </nav>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Коллекция</a>
+        <a href="product.html">AUREL X</a>
+        <a href="contacts.html">Заказать</a>
+    </nav>
 
-  <button class="menu">☰</button>
+    <button class="menu" aria-label="Меню">
+        <span></span>
+        <span></span>
+    </button>
 
 </header>
 
 
-<main class="page">
+<main>
 
-<section class="page-head">
+<section class="catalog-page">
 
-  <span class="eyebrow">Коллекция 2026</span>
+    <div class="section-number reveal">
+        AUREL / COLLECTION
+    </div>
 
-  <h1>
-    Выбери свой<br>
-    <em>звук.</em>
-  </h1>
+    <div class="catalog-heading reveal">
 
-  <p>
-    Три модели. Один стандарт —
-    никаких компромиссов.
-  </p>
+        <div>
+            <div class="eyebrow">
+                2026 COLLECTION
+            </div>
 
-</section>
+            <h1>
+                Выбери<br>
+                свой <span>звук.</span>
+            </h1>
+        </div>
 
+        <p>
+            Три характера.<br>
+            Одна философия AUREL.
+        </p>
 
-<section class="products">
-
-
-<a class="product-card" href="product.html">
-
-  <div class="product-image">
-
-    <img
-      src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=90"
-      alt="AUREL X"
-    >
-
-  </div>
-
-  <div class="product-info">
-
-    <span class="eyebrow">Флагман</span>
-
-    <h2>AUREL X</h2>
-
-    <p>
-      Максимум тишины.
-      Максимум деталей.
-    </p>
-
-    <strong>39 990 ₽</strong>
-
-  </div>
-
-</a>
+    </div>
 
 
-<a class="product-card" href="product.html">
-
-  <div class="product-image">
-
-    <img
-      src="https://images.unsplash.com/photo-1484704849700-f032a568e944?auto=format&fit=crop&w=1000&q=90"
-      alt="AUREL Air"
-    >
-
-  </div>
-
-  <div class="product-info">
-
-    <span class="eyebrow">Лёгкие</span>
-
-    <h2>AUREL Air</h2>
-
-    <p>
-      Свобода без проводов
-      и лишнего веса.
-    </p>
-
-    <strong>29 990 ₽</strong>
-
-  </div>
-
-</a>
+    <div class="products-grid">
 
 
-<a class="product-card" href="product.html">
+        <!-- AUREL X -->
 
-  <div class="product-image">
+        <article class="catalog-card featured-card reveal">
 
-    <img
-      src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=1000&q=90"
-      alt="AUREL Studio"
-    >
+            <a href="product.html" class="card-image headphones-image x-image">
 
-  </div>
+                <div class="product-glow"></div>
 
-  <div class="product-info">
+                <div class="mini-headphones">
+                    <div class="mini-band"></div>
 
-    <span class="eyebrow">Студийные</span>
+                    <div class="mini-ear mini-left">
+                        <div></div>
+                    </div>
 
-    <h2>AUREL Studio</h2>
+                    <div class="mini-ear mini-right">
+                        <div></div>
+                    </div>
+                </div>
 
-    <p>
-      Честный звук для тех,
-      кто слышит больше.
-    </p>
+                <div class="card-badge">
+                    FLAGSHIP
+                </div>
 
-    <strong>49 990 ₽</strong>
+            </a>
 
-  </div>
+            <div class="card-info">
 
-</a>
+                <div>
+                    <span class="card-index">
+                        01
+                    </span>
+
+                    <h2>
+                        AUREL X
+                    </h2>
+                </div>
+
+                <p>
+                    Максимальное погружение.
+                </p>
+
+                <div class="card-bottom">
+
+                    <strong>
+                        39 990 ₽
+                    </strong>
+
+                    <a href="product.html">
+                        Подробнее →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- AUREL AIR -->
+
+        <article class="catalog-card reveal">
+
+            <a href="product.html" class="card-image headphones-image air-image">
+
+                <div class="product-glow"></div>
+
+                <div class="mini-headphones air">
+
+                    <div class="mini-band"></div>
+
+                    <div class="mini-ear mini-left">
+                        <div></div>
+                    </div>
+
+                    <div class="mini-ear mini-right">
+                        <div></div>
+                    </div>
+
+                </div>
+
+                <div class="card-badge">
+                    LIGHT
+                </div>
+
+            </a>
+
+            <div class="card-info">
+
+                <div>
+                    <span class="card-index">
+                        02
+                    </span>
+
+                    <h2>
+                        AUREL Air
+                    </h2>
+                </div>
+
+                <p>
+                    Свобода без проводов.
+                </p>
+
+                <div class="card-bottom">
+
+                    <strong>
+                        24 990 ₽
+                    </strong>
+
+                    <a href="product.html">
+                        Подробнее →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- AUREL STUDIO -->
+
+        <article class="catalog-card reveal">
+
+            <a href="product.html" class="card-image headphones-image studio-image">
+
+                <div class="product-glow"></div>
+
+                <div class="mini-headphones studio">
+
+                    <div class="mini-band"></div>
+
+                    <div class="mini-ear mini-left">
+                        <div></div>
+                    </div>
+
+                    <div class="mini-ear mini-right">
+                        <div></div>
+                    </div>
+
+                </div>
+
+                <div class="card-badge">
+                    STUDIO
+                </div>
+
+            </a>
+
+            <div class="card-info">
+
+                <div>
+                    <span class="card-index">
+                        03
+                    </span>
+
+                    <h2>
+                        AUREL Studio
+                    </h2>
+                </div>
+
+                <p>
+                    Для тех, кто слышит детали.
+                </p>
+
+                <div class="card-bottom">
+
+                    <strong>
+                        34 990 ₽
+                    </strong>
+
+                    <a href="product.html">
+                        Подробнее →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- COLLECTION STATEMENT -->
+
+    <section class="catalog-statement reveal">
+
+        <div class="section-number">
+            AUREL / PHILOSOPHY
+        </div>
+
+        <h2>
+            Технология<br>
+            должна <span>исчезать.</span>
+        </h2>
+
+        <p>
+            Остаётся только музыка.
+        </p>
+
+    </section>
 
 </section>
 
 </main>
 
 
-<footer>
-  <span>© 2026 AUREL</span>
-  <a href="contacts.html">Связаться</a>
+<footer class="footer">
+
+    <div class="footer-logo">
+        AUREL
+    </div>
+
+    <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="product.html">AUREL X</a>
+        <a href="contacts.html">Контакты</a>
+    </div>
+
+    <div class="footer-copy">
+        © 2026 AUREL
+    </div>
+
 </footer>
+
 
 <script src="script.js"></script>
 
