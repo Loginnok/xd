@@ -1,134 +1,430 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <title>AUREL — Премиальный звук</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+    <title>AUREL X — звук нового поколения</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- LOADER -->
+<div class="loader" id="loader">
+    <div class="loader-logo">AUREL</div>
+    <div class="loader-line">
+        <span></span>
+    </div>
+</div>
+
+<!-- HEADER -->
 <header class="header">
-  <a class="logo" href="index.html">AUREL<span>.</span></a>
+    <a href="index.html" class="logo">AUREL</a>
 
-  <nav>
-    <a href="catalog.html">Модели</a>
-    <a href="product.html">AUREL X</a>
-    <a href="contacts.html">Контакты</a>
-  </nav>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Коллекция</a>
+        <a href="product.html">AUREL X</a>
+        <a href="contacts.html">Заказать</a>
+    </nav>
 
-  <button class="menu">☰</button>
+    <button class="menu" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+    </button>
 </header>
+
 
 <main>
 
+<!-- HERO -->
 <section class="hero">
 
-  <div class="hero-copy">
-    <span class="eyebrow">AUREL X · 2026</span>
+    <div class="hero-bg-circle circle-1"></div>
+    <div class="hero-bg-circle circle-2"></div>
 
-    <h1>
-      Звук, который<br>
-      <em>чувствуешь.</em>
-    </h1>
+    <div class="hero-content reveal">
+        <div class="eyebrow">AUREL X / 2026</div>
 
-    <p>
-      Премиальные беспроводные наушники
-      с адаптивным шумоподавлением
-      и до 40 часов работы.
-    </p>
+        <h1>
+            Звук,<br>
+            который<br>
+            <span>чувствуешь.</span>
+        </h1>
 
-    <div class="actions">
-      <a class="btn" href="product.html">Узнать больше</a>
-      <a class="text-link" href="catalog.html">
-        Смотреть модели →
-      </a>
+        <p>
+            Премиальные беспроводные наушники,
+            созданные для абсолютной тишины
+            и безупречного звучания.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="product.html" class="btn btn-primary">
+                Узнать больше
+            </a>
+
+            <a href="#technology" class="btn btn-ghost">
+                Технологии ↓
+            </a>
+        </div>
     </div>
-  </div>
-
-  <div class="hero-art">
-    <div class="glow"></div>
-
-    <img
-      src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=90"
-      alt="Премиальные наушники"
-    >
-  </div>
-
-</section>
 
 
-<section class="strip">
+    <!-- HEADPHONES -->
+    <div class="hero-headphones reveal">
 
-  <div>
-    <b>40 ч</b>
-    <span>автономности</span>
-  </div>
+        <div class="headphone-glow"></div>
 
-  <div>
-    <b>−42 dB</b>
-    <span>шумоподавление</span>
-  </div>
+        <div class="headphone">
+            <div class="headband"></div>
 
-  <div>
-    <b>24-bit</b>
-    <span>Hi-Res Audio</span>
-  </div>
+            <div class="ear left-ear">
+                <div class="ear-outer">
+                    <div class="ear-inner"></div>
+                    <div class="ear-highlight"></div>
+                </div>
+            </div>
 
-  <div>
-    <b>2 года</b>
-    <span>гарантии</span>
-  </div>
+            <div class="ear right-ear">
+                <div class="ear-outer">
+                    <div class="ear-inner"></div>
+                    <div class="ear-highlight"></div>
+                </div>
+            </div>
 
-</section>
+        </div>
 
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
 
-<section class="intro">
+        <div class="floating-label label-1">
+            <span></span> Adaptive ANC
+        </div>
 
-  <div>
-    <span class="eyebrow">Новая коллекция</span>
+        <div class="floating-label label-2">
+            <span></span> Hi-Res Audio
+        </div>
 
-    <h2>
-      Минимализм снаружи.<br>
-      Технологии внутри.
-    </h2>
-  </div>
+    </div>
 
-  <p>
-    Мы создали AUREL для тех,
-    кто не готов выбирать между
-    дизайном, комфортом
-    и настоящим звуком.
-  </p>
+    <div class="scroll-hint">
+        <span></span>
+        SCROLL TO EXPLORE
+    </div>
 
 </section>
 
 
-<section class="feature-card">
+<!-- STATISTICS -->
+<section class="stats">
 
-  <div>
-    <span class="eyebrow">AUREL X</span>
+    <div class="stat reveal">
+        <strong data-count="40">0</strong>
+        <span>часов</span>
+        <small>работы</small>
+    </div>
 
-    <h2>
-      Тишина.<br>
-      Включи свой мир.
-    </h2>
+    <div class="stat reveal">
+        <strong>−42</strong>
+        <span>dB</span>
+        <small>шумоподавления</small>
+    </div>
 
-    <a class="btn" href="product.html">
-      Подробнее
-    </a>
-  </div>
+    <div class="stat reveal">
+        <strong>24</strong>
+        <span>bit</span>
+        <small>Hi-Res Audio</small>
+    </div>
+
+    <div class="stat reveal">
+        <strong>2</strong>
+        <span>года</span>
+        <small>гарантии</small>
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+<section class="intro" id="technology">
+
+    <div class="section-number">01 / TECHNOLOGY</div>
+
+    <div class="intro-content reveal">
+        <h2>
+            Мы не просто<br>
+            сделали наушники.
+        </h2>
+
+        <p>
+            Мы переосмыслили каждую деталь —
+            от динамика до микросхемы,
+            чтобы музыка ощущалась
+            совершенно иначе.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- EXPLODED VIEW -->
+<section class="exploded">
+
+    <div class="section-number">02 / INSIDE AUREL X</div>
+
+    <div class="exploded-title reveal">
+        <h2>
+            Внутри —<br>
+            <span>технология.</span>
+        </h2>
+
+        <p>
+            Проведите вниз и разберите AUREL X
+            на составляющие.
+        </p>
+    </div>
+
+
+    <div class="exploded-stage" id="explodedStage">
+
+        <!-- OUTER SHELL -->
+        <div class="part part-shell">
+            <div class="part-visual shell-visual">
+                <div class="shell-ring"></div>
+                <div class="shell-core"></div>
+            </div>
+
+            <div class="part-info">
+                <span>01</span>
+                <strong>Outer Shell</strong>
+                <small>Аэрокосмический алюминий</small>
+            </div>
+        </div>
+
+
+        <!-- DRIVER -->
+        <div class="part part-driver">
+            <div class="part-visual driver-visual">
+                <div class="driver-ring"></div>
+                <div class="driver-center"></div>
+            </div>
+
+            <div class="part-info">
+                <span>02</span>
+                <strong>40 mm Driver</strong>
+                <small>Высокоточный динамик</small>
+            </div>
+        </div>
+
+
+        <!-- ANC -->
+        <div class="part part-anc">
+            <div class="part-visual anc-visual">
+                <div class="chip">
+                    <i></i><i></i><i></i>
+                    <i></i><i></i><i></i>
+                </div>
+            </div>
+
+            <div class="part-info">
+                <span>03</span>
+                <strong>ANC Engine</strong>
+                <small>−42 dB Adaptive ANC</small>
+            </div>
+        </div>
+
+
+        <!-- BATTERY -->
+        <div class="part part-battery">
+            <div class="part-visual battery-visual">
+                <div class="battery-cell"></div>
+            </div>
+
+            <div class="part-info">
+                <span>04</span>
+                <strong>Battery</strong>
+                <small>40 часов воспроизведения</small>
+            </div>
+        </div>
+
+
+        <!-- MESH -->
+        <div class="part part-mesh">
+            <div class="part-visual mesh-visual">
+                <div class="mesh-circle"></div>
+            </div>
+
+            <div class="part-info">
+                <span>05</span>
+                <strong>Acoustic Mesh</strong>
+                <small>Прецизионная акустика</small>
+            </div>
+        </div>
+
+
+        <!-- BAND -->
+        <div class="part part-band">
+            <div class="part-visual band-visual">
+                <div class="band-piece"></div>
+            </div>
+
+            <div class="part-info">
+                <span>06</span>
+                <strong>Memory Band</strong>
+                <small>Комфорт на весь день</small>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SOUND -->
+<section class="sound-section">
+
+    <div class="sound-orbit orbit-a"></div>
+    <div class="sound-orbit orbit-b"></div>
+    <div class="sound-orbit orbit-c"></div>
+
+    <div class="sound-content reveal">
+
+        <div class="section-number">03 / SOUND</div>
+
+        <h2>
+            Услышь<br>
+            <span>невозможное.</span>
+        </h2>
+
+        <p>
+            AUREL X раскрывает детали,
+            которые раньше терялись
+            в обычных наушниках.
+        </p>
+
+        <div class="equalizer">
+
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+            <i></i>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+<section class="features">
+
+    <div class="section-number">04 / EXPERIENCE</div>
+
+    <div class="feature-grid">
+
+        <article class="feature reveal">
+            <span>01</span>
+            <h3>Adaptive ANC</h3>
+            <p>
+                Система анализирует окружающий
+                шум тысячи раз в секунду
+                и автоматически подстраивается
+                под пространство.
+            </p>
+        </article>
+
+        <article class="feature reveal">
+            <span>02</span>
+            <h3>Spatial Audio</h3>
+            <p>
+                Объёмный звук создаёт ощущение,
+                будто музыка находится вокруг вас,
+                а не внутри наушников.
+            </p>
+        </article>
+
+        <article class="feature reveal">
+            <span>03</span>
+            <h3>Crystal Voice</h3>
+            <p>
+                Шесть микрофонов обеспечивают
+                чистый голос даже
+                в шумном городе.
+            </p>
+        </article>
+
+        <article class="feature reveal">
+            <span>04</span>
+            <h3>Memory Fit</h3>
+            <p>
+                Амбушюры адаптируются
+                к форме головы для максимального
+                комфорта в течение дня.
+            </p>
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+<section class="final-cta">
+
+    <div class="cta-glow"></div>
+
+    <div class="reveal">
+
+        <div class="eyebrow">AUREL X</div>
+
+        <h2>
+            Готовы<br>
+            услышать?
+        </h2>
+
+        <a href="contacts.html" class="btn btn-primary">
+            Заказать AUREL X
+        </a>
+
+    </div>
 
 </section>
 
 </main>
 
-<footer>
-  <span>© 2026 AUREL</span>
-  <a href="contacts.html">Связаться</a>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-logo">AUREL</div>
+
+    <div class="footer-links">
+        <a href="catalog.html">Коллекция</a>
+        <a href="product.html">AUREL X</a>
+        <a href="contacts.html">Контакты</a>
+    </div>
+
+    <div class="footer-copy">
+        © 2026 AUREL
+    </div>
+
 </footer>
+
 
 <script src="script.js"></script>
 
