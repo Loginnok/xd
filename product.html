@@ -1,125 +1,312 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <title>AUREL X — AUREL</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+
+    <title>AUREL X — Premium Headphones</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="header">
 
-  <a class="logo" href="index.html">
-    AUREL<span>.</span>
-  </a>
+    <a href="index.html" class="logo">AUREL</a>
 
-  <nav>
-    <a href="catalog.html">Модели</a>
-    <a class="active" href="product.html">AUREL X</a>
-    <a href="contacts.html">Контакты</a>
-  </nav>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Коллекция</a>
+        <a href="product.html">AUREL X</a>
+        <a href="contacts.html">Заказать</a>
+    </nav>
 
-  <button class="menu">☰</button>
+    <button class="menu" aria-label="Меню">
+        <span></span>
+        <span></span>
+    </button>
 
 </header>
 
 
-<main class="page">
+<main>
+
+<!-- PRODUCT HERO -->
 
 <section class="product-hero">
 
-  <div class="product-main-image">
+    <div class="product-visual reveal">
 
-    <img
-      src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1400&q=90"
-      alt="AUREL X"
-    >
+        <div class="product-halo"></div>
 
-  </div>
+        <div class="big-headphones">
 
+            <div class="big-band"></div>
 
-  <div class="product-copy">
+            <div class="big-ear big-left">
+                <div class="big-ear-inner"></div>
+                <div class="big-reflection"></div>
+            </div>
 
-    <span class="eyebrow">
-      Флагман · 2026
-    </span>
+            <div class="big-ear big-right">
+                <div class="big-ear-inner"></div>
+                <div class="big-reflection"></div>
+            </div>
 
-    <h1>AUREL X</h1>
+        </div>
 
-    <p class="lead">
-      Премиальный звук,
-      адаптивное шумоподавление
-      и комфорт на весь день.
-    </p>
+        <div class="product-orbit orbit-p1"></div>
+        <div class="product-orbit orbit-p2"></div>
 
-    <div class="price">
-      39 990 ₽
     </div>
 
-    <a class="btn wide" href="contacts.html">
-      Заказать
-    </a>
 
-  </div>
+    <div class="product-copy reveal">
 
-</section>
+        <div class="eyebrow">
+            AUREL / FLAGSHIP
+        </div>
 
+        <h1>
+            AUREL<br>
+            <span>X</span>
+        </h1>
 
-<section class="specs">
+        <p class="product-lead">
+            Звук без компромиссов.
+            Тишина без границ.
+        </p>
 
-  <div>
-    <b>40 ч</b>
-    <span>работы</span>
-  </div>
+        <div class="price">
+            39 990 ₽
+        </div>
 
-  <div>
-    <b>−42 dB</b>
-    <span>ANC</span>
-  </div>
+        <a href="contacts.html" class="btn btn-primary">
+            Заказать AUREL X
+        </a>
 
-  <div>
-    <b>24-bit</b>
-    <span>Hi-Res</span>
-  </div>
-
-  <div>
-    <b>290 г</b>
-    <span>вес</span>
-  </div>
+    </div>
 
 </section>
 
 
-<section class="details">
+<!-- PRODUCT INTRO -->
 
-  <span class="eyebrow">
-    Созданы для тебя
-  </span>
+<section class="product-intro">
 
-  <h2>
-    Каждая деталь<br>
-    имеет значение.
-  </h2>
+    <div class="section-number">
+        01 / THE EXPERIENCE
+    </div>
 
-  <p>
-    Мягкие амбушюры, адаптивное
-    шумоподавление, пространственный
-    звук и интеллектуальная настройка
-    эквалайзера.
-  </p>
+    <div class="product-intro-text reveal">
+
+        <h2>
+            Закрой глаза.<br>
+            <span>Остальное исчезнет.</span>
+        </h2>
+
+        <p>
+            AUREL X создаёт личное пространство,
+            где ничто не мешает музыке.
+            Интеллектуальное шумоподавление,
+            пространственный звук и точная акустика
+            работают вместе в реальном времени.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="product-features">
+
+    <article class="product-feature reveal">
+
+        <div class="feature-number">
+            01
+        </div>
+
+        <div class="feature-content">
+
+            <div class="feature-icon anc-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h3>
+                Adaptive ANC
+            </h3>
+
+            <p>
+                До −42 dB внешнего шума.
+                Система анализирует окружение
+                и адаптируется к нему
+                в реальном времени.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <article class="product-feature reveal">
+
+        <div class="feature-number">
+            02
+        </div>
+
+        <div class="feature-content">
+
+            <div class="feature-icon sound-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <h3>
+                Hi-Res Audio
+            </h3>
+
+            <p>
+                40-мм динамик передаёт
+                каждую деталь композиции
+                с поддержкой 24-bit audio.
+            </p>
+
+        </div>
+
+    </article>
+
+
+    <article class="product-feature reveal">
+
+        <div class="feature-number">
+            03
+        </div>
+
+        <div class="feature-content">
+
+            <div class="feature-icon battery-icon">
+                <span></span>
+            </div>
+
+            <h3>
+                40 Hours
+            </h3>
+
+            <p>
+                До 40 часов автономной работы
+                на одном заряде.
+                Ещё больше — с быстрой зарядкой.
+            </p>
+
+        </div>
+
+    </article>
+
+</section>
+
+
+<!-- SPECS -->
+
+<section class="specs-section">
+
+    <div class="section-number">
+        02 / SPECIFICATIONS
+    </div>
+
+    <div class="specs-list">
+
+        <div class="spec-row reveal">
+            <span>Драйвер</span>
+            <strong>40 mm</strong>
+        </div>
+
+        <div class="spec-row reveal">
+            <span>Шумоподавление</span>
+            <strong>до −42 dB</strong>
+        </div>
+
+        <div class="spec-row reveal">
+            <span>Кодек</span>
+            <strong>Hi-Res / 24-bit</strong>
+        </div>
+
+        <div class="spec-row reveal">
+            <span>Автономность</span>
+            <strong>до 40 часов</strong>
+        </div>
+
+        <div class="spec-row reveal">
+            <span>Микрофоны</span>
+            <strong>6 × MEMS</strong>
+        </div>
+
+        <div class="spec-row reveal">
+            <span>Подключение</span>
+            <strong>Bluetooth 5.4</strong>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL PRODUCT CTA -->
+
+<section class="product-cta">
+
+    <div class="product-cta-inner reveal">
+
+        <div class="eyebrow">
+            AUREL X
+        </div>
+
+        <h2>
+            Ваше пространство.<br>
+            Ваш звук.
+        </h2>
+
+        <a href="contacts.html" class="btn btn-primary">
+            Заказать сейчас
+        </a>
+
+    </div>
 
 </section>
 
 </main>
 
 
-<footer>
-  <span>© 2026 AUREL</span>
-  <a href="contacts.html">Связаться</a>
+<footer class="footer">
+
+    <div class="footer-logo">
+        AUREL
+    </div>
+
+    <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Коллекция</a>
+        <a href="contacts.html">Контакты</a>
+    </div>
+
+    <div class="footer-copy">
+        © 2026 AUREL
+    </div>
+
 </footer>
+
 
 <script src="script.js"></script>
 
