@@ -1,111 +1,258 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#090909">
-  <title>Заказ — AUREL</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#050505">
+    <title>AUREL — Заказать</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="contacts-page">
+
+<div class="loader">
+    <div class="loader-logo">AUREL</div>
+    <div class="loader-line"></div>
+</div>
 
 <header class="header">
+    <a href="index.html" class="logo">AUREL</a>
 
-  <a class="logo" href="index.html">
-    AUREL<span>.</span>
-  </a>
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="catalog.html">Коллекция</a>
+        <a href="product.html">AUREL X</a>
+        <a href="contacts.html" class="active">Заказать</a>
+    </nav>
 
-  <nav>
-    <a href="catalog.html">Модели</a>
-    <a href="product.html">AUREL X</a>
-    <a class="active" href="contacts.html">Контакты</a>
-  </nav>
-
-  <button class="menu">☰</button>
-
+    <button class="menu-toggle" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+    </button>
 </header>
 
 
-<main class="page">
+<main>
 
-<section class="contact-head">
+    <!-- CONTACT HERO -->
+    <section class="contact-hero">
+        <div class="contact-hero-inner">
 
-  <span class="eyebrow">
-    Связь с AUREL
-  </span>
+            <div class="section-kicker reveal">
+                <span></span>
+                AUREL / ORDER
+            </div>
 
-  <h1>
-    Готов к своему<br>
-    <em>звуку?</em>
-  </h1>
+            <h1 class="contact-title reveal">
+                Твой звук.<br>
+                <em>Твой AUREL.</em>
+            </h1>
 
-  <p>
-    Оставь контакты — мы свяжемся
-    с тобой и поможем выбрать модель.
-  </p>
+            <p class="contact-subtitle reveal">
+                Оставь заявку — мы свяжемся с тобой,
+                ответим на вопросы и поможем выбрать
+                подходящую модель.
+            </p>
 
-</section>
+        </div>
 
+        <div class="contact-orbit orbit-one"></div>
+        <div class="contact-orbit orbit-two"></div>
 
-<form class="contact-form"
-      onsubmit="return submitOrder(event)">
-
-  <label>
-    Имя
-
-    <input
-      type="text"
-      name="name"
-      placeholder="Как к тебе обращаться?"
-      required
-    >
-
-  </label>
+    </section>
 
 
-  <label>
-    Телефон или Telegram
+    <!-- FORM -->
+    <section class="order-section">
 
-    <input
-      type="text"
-      name="contact"
-      placeholder="@username или +7..."
-      required
-    >
+        <div class="order-grid">
 
-  </label>
+            <div class="order-info reveal">
+
+                <div class="section-kicker">
+                    <span></span>
+                    CONNECTION
+                </div>
+
+                <h2>
+                    Начнём<br>
+                    разговор.
+                </h2>
+
+                <p>
+                    Заполни короткую форму справа.
+                    Никаких сложных процедур — только
+                    ты, музыка и правильные наушники.
+                </p>
+
+                <div class="contact-details">
+
+                    <div class="contact-detail">
+                        <span class="detail-number">01</span>
+                        <div>
+                            <small>Ответ</small>
+                            <strong>Свяжемся после заявки</strong>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <span class="detail-number">02</span>
+                        <div>
+                            <small>Подбор</small>
+                            <strong>Поможем выбрать модель</strong>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <span class="detail-number">03</span>
+                        <div>
+                            <small>Финал</small>
+                            <strong>Обсудим заказ и доставку</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
 
 
-  <label>
-    Модель
+            <div class="order-form-wrap reveal">
 
-    <select name="model">
+                <div class="form-top">
+                    <span>01 — YOUR DETAILS</span>
+                    <span>AUREL</span>
+                </div>
 
-      <option>AUREL X</option>
-      <option>AUREL Air</option>
-      <option>AUREL Studio</option>
+                <form id="orderForm">
 
-    </select>
+                    <div class="input-group">
+                        <label for="name">Имя</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Как тебя зовут?"
+                            required
+                        >
+                    </div>
 
-  </label>
+                    <div class="input-group">
+                        <label for="contact">Контакт</label>
+                        <input
+                            type="text"
+                            id="contact"
+                            name="contact"
+                            placeholder="Telegram или телефон"
+                            required
+                        >
+                    </div>
+
+                    <div class="input-group">
+                        <label for="model">Модель</label>
+
+                        <div class="select-wrap">
+                            <select id="model" name="model" required>
+                                <option value="" disabled selected>
+                                    Выбери модель
+                                </option>
+                                <option value="AUREL X">
+                                    AUREL X — 39 990 ₽
+                                </option>
+                                <option value="AUREL Air">
+                                    AUREL Air — 24 990 ₽
+                                </option>
+                                <option value="AUREL Studio">
+                                    AUREL Studio — 34 990 ₽
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="message">Комментарий</label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder="Есть вопрос? Напиши его здесь..."
+                        ></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit">
+                        <span>Отправить заявку</span>
+                        <span class="button-arrow">↗</span>
+                    </button>
+
+                    <p class="form-note">
+                        Нажимая кнопку, ты отправляешь заявку
+                        на связь с AUREL.
+                    </p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
-  <button class="btn wide" type="submit">
-    Отправить заявку
-  </button>
+    <!-- FINAL -->
+    <section class="contact-final">
 
-  <p class="form-note" id="formMessage"></p>
+        <div class="contact-final-glow"></div>
 
-</form>
+        <div class="contact-final-inner reveal">
+
+            <div class="section-kicker">
+                <span></span>
+                AUREL AUDIO
+            </div>
+
+            <h2>
+                Слышать<br>
+                <em>больше.</em>
+            </h2>
+
+            <a href="catalog.html" class="magnetic-btn">
+                <span>Смотреть коллекцию</span>
+                <span>↗</span>
+            </a>
+
+        </div>
+
+    </section>
 
 </main>
 
 
-<footer>
-  <span>© 2026 AUREL</span>
-  <a href="index.html">На главную</a>
+<footer class="footer">
+
+    <div class="footer-top">
+        <div class="footer-brand">
+            <div class="footer-logo">AUREL</div>
+            <p>
+                Sound beyond<br>
+                the ordinary.
+            </p>
+        </div>
+
+        <div class="footer-links">
+            <a href="index.html">Главная</a>
+            <a href="catalog.html">Коллекция</a>
+            <a href="product.html">AUREL X</a>
+            <a href="contacts.html">Заказать</a>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <span>© 2026 AUREL</span>
+        <span>ENGINEERED FOR EMOTION</span>
+    </div>
+
 </footer>
+
 
 <script src="script.js"></script>
 
